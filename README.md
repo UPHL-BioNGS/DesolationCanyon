@@ -4,6 +4,7 @@ Basic instructions on how to create a mash *msh file for all prokaryotic represe
 Dependencies
 - mash
 - datasets
+- dataformat
 
 ## Get IDs for representative sequences
 
