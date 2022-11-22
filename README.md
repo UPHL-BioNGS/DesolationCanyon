@@ -50,18 +50,21 @@ cat  ncbi_dataset/data/*/*.fna  | sed 's/ /_/g' | sed 's/,//g' > rep-genomes.fas
 
 ## Create mash sketch file
 ```bash
-mash sketch rep-genomes.fasta
+mash sketch -i -p 20 rep-genomes.fasta
 ```
 
 ## Upload to Zenodo
 
 The current size is
 ```bash
-ls -h rep-genomes.msh
+$ ls -alh rep-genomes.fasta
+-rwxrwxrwx. 1 1024 users 69G Nov 21 17:55 rep-genomes.fasta
+$ ls -alh rep-genomes.msh
+-rwxrwxrwx. 1 1024 users 6.2G Nov 22 09:54 rep-genomes.msh
 ```
-
-current address is
+This is too big to put into a container.
 
 ## Download from Zenodo
-
-wget <>
+```
+wget https://zenodo.org/record/7348463/files/rep-genomes.msh
+```

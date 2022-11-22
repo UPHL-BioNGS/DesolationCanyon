@@ -41,7 +41,7 @@ echo "$(date): Creating file for mash"
 cat  ncbi_dataset/data/*/*.fna  | sed 's/ /_/g' | sed 's/,//g' > rep-genomes.fasta
 
 echo "$(date): Skeching rep-genomes.fasta"
-mash sketch rep-genomes.fasta
+mash sketch -i -p 20 rep-genomes.fasta -o rep-genomes
 
 ############################################################
 
@@ -52,7 +52,6 @@ ls -alh rep-genomes.msh
 echo "$(date): Remaining tasks:
 - upload rep-genomes.msh to Zenodo
 - update the github readme
-- create new docker container for mash
 "
 
 ############################################################
